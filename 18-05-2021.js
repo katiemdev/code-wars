@@ -26,8 +26,7 @@ let hypotenuse = (a, b) => Math.sqrt(a ** 2 + b ** 2);
 let leg = (c, a) => Math.sqrt(c ** 2 - a ** 2);
 
 
-//Create a function called addArrays() that combines two arrays of equal length, summing each element of the first with the corresponding element in the second, returning the "combined" summed array.
-Raise an error if input arguments are not of equal length.
+//Create a function called addArrays() that combines two arrays of equal length, summing each element of the first with the corresponding element in the second, returning the "combined" summed array. Raise an error if input arguments are not of equal length.
 function addArrays(arr1, arr2) {
     if(arr1.length !== arr2.length) Throw new Error;
     let arr = []
