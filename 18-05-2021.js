@@ -25,42 +25,41 @@ function plant(seed, water, fert, temp) {
 let hypotenuse = (a, b) => Math.sqrt(a ** 2 + b ** 2);
 let leg = (c, a) => Math.sqrt(c ** 2 - a ** 2);
 
-
 //Create a function called addArrays() that combines two arrays of equal length, summing each element of the first with the corresponding element in the second, returning the "combined" summed array. Raise an error if input arguments are not of equal length.
 function addArrays(arr1, arr2) {
-    if(arr1.length !== arr2.length) Throw new Error;
-    let arr = []
-    for(let i = 0; i < arr1.length; i++) {
-      arr.push(arr1[i] + arr2[i])
-    }
-    return arr
-  }
+	if (arr1.length !== arr2.length) return error;
+	let arr = [];
+	for (let i = 0; i < arr1.length; i++) {
+		arr.push(arr1[i] + arr2[i]);
+	}
+	return arr;
+}
 
-  //write a function that returns the average age of developers (rounded to the nearest integer). In the example above your function should return 50 (number).
-  function getAverageAge(list) {
-    let arr = []
-    for(let i = 0; i < list.length; i++) {
-      arr.push(list[i].age)
-    }
-    return Math.round((arr.reduce((p,c) => p + c, 0)) / arr.length)
-  }
+//write a function that returns the average age of developers (rounded to the nearest integer). In the example above your function should return 50 (number).
+function getAverageAge(list) {
+	let arr = [];
+	for (let i = 0; i < list.length; i++) {
+		arr.push(list[i].age);
+	}
+	return Math.round(arr.reduce((p, c) => p + c, 0) / arr.length);
+}
 
-  //write a function inverse_slice() that takes three arguments: a list items, an integer a and an integer b. The function should return a new list with the slice specified by items[a:b] excluded.
-  function inverseSlice(items, a, b) {
-    items.splice(a, b-a)
-    return items
-  }
+//write a function inverse_slice() that takes three arguments: a list items, an integer a and an integer b. The function should return a new list with the slice specified by items[a:b] excluded.
+function inverseSlice(items, a, b) {
+	items.splice(a, b - a);
+	return items;
+}
 
-  //You will be given a list of strings, a transcript of an English Shiritori match. Your task is to find out if the game ended early, and return a list that contains every valid string until the mistake. If a list is empty return an empty list. If one of the elements is an empty string, that is invalid and should be handled.
-  function shiritori(words) {
-    if(!words.length || words[0] === "") return []
-    let arr = [words[0]]
-    for(let i = 1; i < words.length; i++) {
-        if(words[i].startsWith(words[i-1].charAt(words[i-1].length -1))) {
-            arr.push(words[i])
-        }else {
-        break;
-        }
-    }
-    return arr
-  }
+//You will be given a list of strings, a transcript of an English Shiritori match. Your task is to find out if the game ended early, and return a list that contains every valid string until the mistake. If a list is empty return an empty list. If one of the elements is an empty string, that is invalid and should be handled.
+function shiritori(words) {
+	if (!words.length || words[0] === "") return [];
+	let arr = [words[0]];
+	for (let i = 1; i < words.length; i++) {
+		if (words[i].startsWith(words[i - 1].charAt(words[i - 1].length - 1))) {
+			arr.push(words[i]);
+		} else {
+			break;
+		}
+	}
+	return arr;
+}
