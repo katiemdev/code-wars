@@ -21,3 +21,6 @@ String.prototype.toJadenCase = function () {
 		.map((w) => (w = w[0].toUpperCase() + w.slice(1).toLowerCase()))
 		.join(" ");
 };
+
+//When provided with a String, capitalize all vowels
+const swap = (st) => st.replace(/[aeiou]/g, (v) => v.toUpperCase());
