@@ -6,3 +6,11 @@ function covfefe(str) {
 		return str.replace(/coverage/gi, "covfefe");
 	}
 }
+
+//Complete the function that accepts a string parameter, and reverses each word in the string. All spaces in the string should be retained.
+function reverseWords(str) {
+	return str
+		.split(" ")
+		.map((w) => (w = w.split("").reverse().join("")))
+		.join(" ");
+}
