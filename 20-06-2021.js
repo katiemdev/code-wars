@@ -24,3 +24,9 @@ String.prototype.toJadenCase = function () {
 
 //When provided with a String, capitalize all vowels
 const swap = (st) => st.replace(/[aeiou]/g, (v) => v.toUpperCase());
+
+//Create a function wordSearch(word,text) that searches to see whether a word word is present in the given text variable. Note it has to be a full word which means it is surround by a word boundary (spaces, end/start of string, various punctuation, ... ).
+function wordSearch(word, text) {
+	let regex = new RegExp(`\\b${word}\\b`, "gi");
+	return regex.test(text);
+}
