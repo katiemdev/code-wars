@@ -23,3 +23,15 @@ function makePassword(phrase) {
 		.replace(/o/gi, "0")
 		.replace(/s/gi, "5");
 }
+
+//You are sending out a marketing campaign for your company, Code-o-matic. But you want to personalise the emails so that the people don't think they are being spammed! You will be given a string of marketing text called campaign and a hash person. In the string campaign, there will be three personalisable elements
+/* <NAME>
+<CITY>
+<FAVOURITE PRODUCTS>.
+You need to replace these elements with the personal details of the person to whom you are sending the email which are in the hash person (which may contain other information from the database, which you don't need). */
+function personalise(campaign, person) {
+	return campaign
+		.replace(/<NAME>/gi, person.name)
+		.replace(/<CITY>/gi, person.city)
+		.replace(/<FAVOURITE PRODUCTS>/gi, person.favourite_products);
+}
