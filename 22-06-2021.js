@@ -47,3 +47,12 @@ function isFlush(cards) {
 	const newArr = cards.map((e) => (e = e.slice(-1)));
 	return newArr.every((v) => v === newArr[0]);
 }
+
+//Write a script that takes an array of possible passwords and a string of binary representing the possible password. Convert the binary to a string and compare to the password array. If the password is found, return the password string, else return false
+function decodePass(passArr, bin) {
+	const password = bin
+		.split(" ")
+		.map((e) => (e = String.fromCharCode(parseInt(e, 2))))
+		.join("");
+	return passArr.includes(password) ? password : false;
+}
