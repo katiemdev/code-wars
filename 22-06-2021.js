@@ -41,3 +41,9 @@ function gematria(str) {
 //When given a string of space separated words, return the word with the longest length. If there are multiple words with the longest length, return the last instance of the word with the longest length.
 const longestWord = (str) =>
 	str.split(" ").reduce((a, c) => (c.length >= a.length ? (a = c) : a), "");
+
+//Determine if the poker hand is flush, meaning if the five cards are of the same suit. Your function will be passed a list/array of 5 strings, each representing a poker card in the format "5H" (5 of hearts), meaning the value of the card followed by the initial of its suit (Hearts, Spades, Diamonds or Clubs). No jokers included. Your function should return true if the hand is a flush, false otherwise.
+function isFlush(cards) {
+	const newArr = cards.map((e) => (e = e.slice(-1)));
+	return newArr.every((v) => v === newArr[0]);
+}
