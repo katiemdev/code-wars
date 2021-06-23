@@ -18,3 +18,24 @@ function sortMyString(S) {
 	}
 	return `${even} ${odd}`;
 }
+
+//Your task is to complete the function which takes a string, and returns an array with all possible rotations of the given string, in uppercase.
+function scrollingText(text) {
+	text = text.toUpperCase();
+	let arr = [text],
+		textCopy = text.slice(1) + text.slice(0, 1);
+
+	while (textCopy !== text) {
+		arr.push(textCopy);
+		textCopy = textCopy.slice(1) + textCopy.slice(0, 1);
+	}
+	return arr;
+}
+
+//The input will be an array of dictionaries. Return the values as a string-seperated sentence in the order of their keys' integer equivalent (increasing order). The keys are not reoccurring and their range is -999 < key < 999. The dictionaries' keys & values will always be strings and will always not be empty.
+function sentence(list) {
+	return list
+		.sort((a, b) => parseInt(Object.keys(a)[0]) - parseInt(Object.keys(b)[0]))
+		.map((e) => (e = Object.values(e).toString()))
+		.join(" ");
+}
