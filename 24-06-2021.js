@@ -17,3 +17,9 @@ function binaryToString(binary) {
 		.map((bin) => String.fromCharCode(parseInt(bin, 2)))
 		.join("");
 }
+
+//Complete the function that counts the number of unique consonants in a string (made up of printable ascii characters).
+function countConsonants(str) {
+	const consonants = str.replace(/[aeiou\d\W]/gi, "").toLowerCase();
+	return [...new Set(consonants)].length;
+}
