@@ -8,3 +8,12 @@ function reverser(sentence) {
 		.map((word) => (word = word.split("").reverse().join("")))
 		.join(" ");
 }
+
+//Your computer has forgotten how to speak ASCII! (or Unicode, whatever) It can only communicate in binary, and it has something important to tell you. Write a function which will receive a long string of binary code and convert it to a string. Remember, in Python binary output starts with '0b'.
+function binaryToString(binary) {
+	return binary
+		.split("0b")
+		.slice(1)
+		.map((bin) => String.fromCharCode(parseInt(bin, 2)))
+		.join("");
+}
