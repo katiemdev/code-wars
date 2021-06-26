@@ -24,3 +24,13 @@ function explode(x) {
 
 	return arr;
 }
+
+//this kata requires you to turn any sentence provided (s) into ex-pat balinese waffle by inserting the word 'pak' between every other word.
+function pak(s) {
+	if (s.trim() == "") return "";
+	return s
+		.split(" ")
+		.map((e, i) => e + " pak")
+		.join(" ")
+		.slice(0, -4);
+}
