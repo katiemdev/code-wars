@@ -27,3 +27,14 @@ function initializeNames(name) {
 		return name.join(" ");
 	}
 }
+
+//We have to create a function that receives a connection string with password included and you have to mask the password i.e. change password by asterisks. Preconditions:
+// non empty valid url password always next to string section password=
+// assume password will not contain ampersand sign for sake of simplicity
+// to make it more real it has non ASCII characters
+// "password=" and "user" will occur only once
+function hidePasswordFromConnection(urlString) {
+	let regex = new RegExp(/(?<=password=)([^&\s])+/, "gi");
+	let match = urlString.match(regex);
+	return urlString.replace(regex, (m) => "*".repeat(m.length));
+}
