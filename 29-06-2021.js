@@ -20,3 +20,8 @@ function averageLength(arr) {
 	);
 	return arr.map((e) => e[0].repeat(average));
 }
+
+//You have two arrays of single letters, array1 and array2, where the elements are without duplicates(but the element of the first array can be equal to the element of the second array). Return a new array containing the first n elements from the two arrays in alphabetical order.
+function thatUnitesUs(array1, array2, n) {
+	return [...new Set([...array1, ...array2])].sort().slice(0, n);
+}
