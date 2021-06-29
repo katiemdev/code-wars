@@ -6,3 +6,9 @@ function checkDigit(number, index1, index2, digit) {
 			: number.toString().slice(index1, index2 + 1);
 	return snippet.includes(digit);
 }
+
+//Check if it is a vowel(a, e, i, o, u,) on the n position in a string (the first argument). Don't forget about uppercase.
+function checkVowel(string, position) {
+	if (!string[position]) return false;
+	return /[aeiou]/i.test(string[position]);
+}
