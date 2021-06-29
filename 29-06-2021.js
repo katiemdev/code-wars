@@ -12,3 +12,11 @@ function checkVowel(string, position) {
 	if (!string[position]) return false;
 	return /[aeiou]/i.test(string[position]);
 }
+
+//Given an array of strings of the same letter type. Return a new array, which will differ in that the length of each element is equal to the average length of the elements of the previous array.
+function averageLength(arr) {
+	const average = Math.round(
+		arr.reduce((a, c) => a + c.length, 0) / arr.length
+	);
+	return arr.map((e) => e[0].repeat(average));
+}
