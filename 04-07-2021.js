@@ -1,5 +1,4 @@
 //Here we have a function that help us spam our hearty laughter. But is not working! I need you to find out why...
 function spam(number) {
-	//TODO: Not returning the expected value.
 	return "hue".repeat(number);
 }
