@@ -11,3 +11,8 @@ function nicknameGenerator(name) {
 	if (name.length < 4) return "Error: Name too short";
 	return !name[2].match(/[aeiou]/i) ? name.slice(0, 3) : name.slice(0, 4);
 }
+
+//Write a function "coffee" that accepts a string as a parameter and returns that string with every instance of coffee in all caps.
+function coffee(str) {
+	return str.replace(/coffee/gi, "COFFEE");
+}
