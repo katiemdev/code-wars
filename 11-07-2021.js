@@ -37,3 +37,32 @@ function rank(card) {
 	if (letters[card[0]]) return letters[card[0]];
 	return +card[0] >= 2 ? +card[0] : 0;
 }
+
+//Oh no! Tinder's emoji decryption has gone down, and they need your help! People are receiving raw code instead of the emojis the know, love and rely upon. It's total chaos! And without your help, the millenials will no longer be able to express themselves!! While the engineers sort out the issue, the PR people have created a set of stand-in emojis using common `UTF-8` characters, and they need you write a function that can help implement them.
+const insert = (string) => {
+	const emojis = {
+		smile: ":)",
+		grin: ":D",
+		smiley: "=)",
+		sohappy: "XD",
+		tongue: ":P",
+		wink: ";)",
+		sad: ":(",
+		slant: ":/",
+		surprised: ":O",
+		catface: ":3",
+		cool: "B)",
+		unimpressed: ":|",
+		angry: ">:|",
+		kissing: "^.^",
+		dazed: "*_*",
+		dance1: "<(^.^<)",
+		dance2: "(>^.^)>",
+		heart: "<3",
+	};
+
+	return string.replace(
+		/\[\[f9\.(\w+)\]\]/gi,
+		(m) => emojis[m.match(/\w{3,}/i)]
+	);
+};
