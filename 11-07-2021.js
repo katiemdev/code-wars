@@ -23,3 +23,17 @@ function esrever(str) {
 	let i = str[str.length - 1];
 	return str.slice(0, -1).split("").reverse().join("") + i;
 }
+
+//What is the rank of a playing card? The function takes a string like '2c' or 'Kh' and returns a value based on rank of the card. The first character corresponds to the rank of the card and the second character corresponds to the suit of the card. Cards 2-9 should return the corresponding number. T returns 10, J => 11, Q => 12, K => 13 and A => 14. Otherwise the rank should be returned as 0.
+function rank(card) {
+	const letters = {
+		T: 10,
+		J: 11,
+		Q: 12,
+		K: 13,
+		A: 14,
+	};
+
+	if (letters[card[0]]) return letters[card[0]];
+	return +card[0] >= 2 ? +card[0] : 0;
+}
