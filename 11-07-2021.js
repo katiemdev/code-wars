@@ -16,3 +16,10 @@ function nicknameGenerator(name) {
 function coffee(str) {
 	return str.replace(/coffee/gi, "COFFEE");
 }
+
+//In this kata you must take an input string, reverse the order of the words, and reverse the order of the letters within the words. But, as a bonus, every test input will end with a punctuation mark (! ? .) and the output should be returned with the mark at the end.
+function esrever(str) {
+	if (str == "") return "";
+	let i = str[str.length - 1];
+	return str.slice(0, -1).split("").reverse().join("") + i;
+}
