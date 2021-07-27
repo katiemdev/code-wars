@@ -3,3 +3,8 @@ function dadFilter(str) {
 	str = str.replace(/,{2,}/g, ",").trim();
 	return str.charAt(str.length - 1) == "," ? str.slice(0, -1) : str;
 }
+
+//Implement String#whitespace?(str) (Ruby), String.prototype.whitespace(str) (JavaScript), String::whitespace(str) (CoffeeScript), or whitespace(str) (Python), which should return true/True if given object consists exclusively of zero or more whitespace characters, false/False otherwise.
+String.prototype.whitespace = function () {
+	return this.length == (this.match(/\s/g) || []).length;
+};
