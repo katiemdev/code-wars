@@ -8,3 +8,16 @@ class Dinglemouse {
 		return (this.firstName + " " + this.lastName).trim();
 	}
 }
+
+//#Get the averages of these numbers. Write a method, that gets an array of integer-numbers and return an array of the averages of each integer-number and his follower, if there is one.
+function averages(numbers) {
+	if (!numbers) return [];
+	const averageArr = [];
+
+	for (let i = 0; i < numbers.length; i++) {
+		if (i == numbers.length - 1) break;
+
+		averageArr.push((numbers[i] + numbers[i + 1]) / 2);
+	}
+	return averageArr;
+}
