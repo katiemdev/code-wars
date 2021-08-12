@@ -21,3 +21,11 @@ function averages(numbers) {
 	}
 	return averageArr;
 }
+
+//Write a function that takes a string which has integers inside it separated by spaces, and your task is to convert each integer in the string into an integer and return their sum.
+function summy(stringOfInts) {
+	return stringOfInts
+		.split(" ")
+		.map((e) => +e)
+		.reduce((p, c) => p + c, 0);
+}
