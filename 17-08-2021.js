@@ -18,3 +18,6 @@ function vaporcode(string) {
 		.map((e) => (e = e.toUpperCase()))
 		.join("  ");
 }
+
+//Given an integral number, determine if it's a square number
+const isSquare = (n) => Math.sqrt(n) % 1 == 0;
