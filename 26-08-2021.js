@@ -23,3 +23,25 @@ function multiples(s1, s2, s3) {
 
 	return arr;
 }
+
+//In this Kata, you will be given an array of unique elements, and your task is to rearrange the values so that the first max value is followed by the first minimum, followed by second max value then second min value, etc.
+function solve(arr) {
+	const answer = [];
+
+	while (arr.length) {
+		if (arr.length == 1) {
+			answer.push(arr[0]);
+			break;
+		}
+
+		let max = Math.max(...arr);
+		let min = Math.min(...arr);
+
+		answer.push(max, min);
+
+		arr.splice(arr.indexOf(max), 1);
+		arr.splice(arr.indexOf(min), 1);
+	}
+
+	return answer;
+}
